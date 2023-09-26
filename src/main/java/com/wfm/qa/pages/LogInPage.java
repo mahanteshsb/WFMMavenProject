@@ -25,6 +25,7 @@ public class LogInPage extends TestBase {
 	@FindBy(xpath = "//img[@alt=\"Naukri Logo\"]")
 	WebElement wfmlogo;
 
+	
 //	Initializing the Page Objects: 
 	public LogInPage() {
 		PageFactory.initElements(driver, this);

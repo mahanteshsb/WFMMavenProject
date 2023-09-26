@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wfm.qa.testcases.HomePageTest">
+      <class name="com.wfm.qa.wfmtestcases.ProjectPageTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="verifyHomePageTitleTest"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifycreateprojectTest"/>
         </methods>
-      </class> <!-- com.wfm.qa.testcases.HomePageTest -->
+      </class> <!-- com.wfm.qa.wfmtestcases.ProjectPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
