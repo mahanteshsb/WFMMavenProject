@@ -8,7 +8,9 @@
 		<classes>
 			<class name="com.wfm.qa.wfmtestcases.SigninPageTest"></class>
 			<class name="com.wfm.qa.wfmtestcases.HomePageTest"></class>
-		
+		<class name="com.wfm.qa.wfmtestcases.ProjectPageTest"></class>
+		<class name="com.wfm.qa.wfmtestcases.TaskPageTest"></class>
+		<class name="com.wfm.qa.wfmtestcases.SubTaskPageTest"></class>
 
 		</classes>
 	</test>

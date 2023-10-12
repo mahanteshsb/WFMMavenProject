@@ -29,6 +29,8 @@ public class ProjectPage extends TestBase {
 	@FindBy(xpath="//h2[text()='Projects']")
 	WebElement projectLable;
 	
+	@FindBy(xpath="//input[@placeholder=\"Search a project\"]")
+	WebElement searchBtn;
 	
 	public ProjectPage() {
 		PageFactory.initElements(driver, this);
@@ -44,7 +46,7 @@ public class ProjectPage extends TestBase {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", createprojectBtn);
 	}
-public void verifycreateprojectLink(String projectname, String description) {
+public void verifycreateprojectLink(String projectname, String description , String search) {
 	
 	projectName.sendKeys(projectname);
 	descriptionBtn.sendKeys(description);
@@ -52,6 +54,7 @@ public void verifycreateprojectLink(String projectname, String description) {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	js.executeScript("arguments[0].click();", createBtn);
 	
+	searchBtn.sendKeys(search);
 	
 }
 

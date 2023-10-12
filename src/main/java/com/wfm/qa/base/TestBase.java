@@ -13,6 +13,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.wfm.qa.util.TestUtil;
 import com.wfm.qa.util.WebEventListener;
+import org.testng.ITestResult;
 
 public class TestBase {
 
@@ -26,8 +27,8 @@ public class TestBase {
 
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(
-					"C:\\Users\\Dell\\eclipse-workspace2\\WFMTestAutomation\\src\\main\\java\\com\\wfm\\qa\\config\\config.properties");
+			FileInputStream ip = new FileInputStream("C:\\Users\\GLB-BLR-015\\git\\WFMMavenProject\\src\\"
+					+ "main\\java\\com\\wfm\\qa\\config\\config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -40,7 +41,7 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dell\\eclipse-workspace2\\WFMTestAutomation\\Driver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\GLB-BLR-015\\git\\WFMMavenProject\\Driver\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equalsIgnoreCase("Firefox")) {
 			System.setProperty("webdriver.gecko.driver", "C:\\Users\\Dell\\eclipse-workspace2\\WFMTestAutomation\\Driver\\geckodriver.exe");

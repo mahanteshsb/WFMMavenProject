@@ -13,8 +13,12 @@ import com.wfm.qa.wmpages.HomePage;
 import com.wfm.qa.wmpages.ProjectPage;
 import com.wfm.qa.wmpages.SignInPage;
 
-public class ProjectPageTest extends TestBase {
+import org.testng.ITestNGListener;
+import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 
+public class ProjectPageTest extends TestBase {
+	
 	SignInPage signinpage;
 	HomePage homepage;
 	TestUtil testutil;
@@ -36,24 +40,41 @@ String sheertName="project";
 		projectpage = homepage.clickOnProjectLink();
 	}
 
-//	@Test
-//	public void verifyprojectpagelableTest() {
-//		Assert.assertEquals(projectpage.verifyprojectLable(), "All Projects");
-//	}
-//	
-//	@DataProvider
-//	public Object [][] getwfmTestData() throws InvalidFormatException {
-//		 Object data[][]=	testutil.getTestData(sheertName);
-//		 return data;
-//	}
+	 @DataProvider(name="projectdata")
+	    public Object[][] getDataFromDataprovider(){
+	    return new Object[][] 
+	    	{
+	            { "Project12", "Welcome to Project" ,"Project12"},
+	            { "Project22", "Welcome to Project","Project22" },
+	            { "Project33", "Welcome to Project" ,"Project33"}
+	        };
 
-	@Test(priority = 1 )
+	    }
+
+
+/*	
+	@DataProvider
+	public Object [][] getwfmTestData() throws InvalidFormatException {
+		 Object data[][]=	testutil.getTestData(sheertName);
+		 return data;
+	}
+	
+	@Test(dataProvider="getwfmTestData")
+	public void verifycreateprojectTest(String projectname, String description, String search) {
+//		public void verifycreateprojectTest() {
+			projectpage.clickOnCreateprojectLink();
+			projectpage.verifycreateprojectLink(projectname, description, search);
+
+		} */
+//
+	@Test(dataProvider="projectdata" )
 //	@Test(priority = 1 , dataProvider="getwfmTestData")
-//	public void verifycreateprojectTest(String projectname, String description)
-	public void verifycreateprojectTest() {
+	public void verifycreateprojectTest(String projectname, String description, String search) {
+//	public void verifycreateprojectTest() {
 		projectpage.clickOnCreateprojectLink();
-		projectpage.verifycreateprojectLink("Mission", "Welcome to Mission Project");
-//		projectpage.verifycreateprojectLink(projectname, description);
+		projectpage.verifycreateprojectLink(projectname, description, search);
+//		projectpage.verifycreateprojectLink("Admin123 Project", "Welcome to new Project" ,"Admin123 Project");
+//		projectpage.verifycreateprojectLink("EMP1 Project", "Welcome to EMP Project", "EMP1 Project");
 		boolean flag=projectpage.verifyAllprojectLable();
 		Assert.assertTrue(flag);
 	}

@@ -9,16 +9,16 @@ import com.wfm.qa.base.TestBase;
 
 public class SignInPage extends TestBase {
 
-	@FindBy(xpath = "//input[@type=\"email\"]")
+	@FindBy(xpath = "//input[@name=\"email\"]")
 	WebElement emailBtn;
 
-	@FindBy(xpath = "//input[@type=\"password\"]")
+	@FindBy(xpath = "//input[@name=\"password\"]")
 	WebElement passwordBtn;
 
-	@FindBy(xpath = "//button[@type=\"submit\"]")
+	@FindBy(xpath = "//button[text()=\"Login\"]")
 	WebElement signinBtn;
 
-	@FindBy(xpath = "(//img[@alt=\"EmpMonitor\"])[1]")
+	@FindBy(xpath = "//img[@alt=\"logo\"]")
 	WebElement wfmlogo;
 
 //	Initializing the Page Objects: 

@@ -61,10 +61,10 @@ public class HomePageTest extends TestBase {
  
  
  
-// @AfterMethod
-// public void tearDown() {
-//	 driver.quit();
-// }
+ @AfterMethod
+ public void tearDown() {
+	 driver.quit();
+ }
  
  
  
